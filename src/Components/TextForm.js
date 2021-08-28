@@ -20,8 +20,8 @@ export default function TextForm() {
             <div className="mb-3 my-2">
                 <textarea value={text} onChange={handleOnChange} className="form-control" id="exampleFormControlTextarea1" rows="8"></textarea>
             </div>
-            <button className="btn btn-primary mx-1" onClick={handleUpClick}>To Upper Case</button>
-            <button className="btn btn-primary mx-1" onClick={handleLoClick}>To Lower Case</button>
+            <button className="btn btn-primary mx-1 my-1" onClick={handleUpClick}>To Upper Case</button>
+            <button className="btn btn-primary mx-1 my-1" onClick={handleLoClick}>To Lower Case</button>
         </div>
         <div className="container">
         <h2>Number of words: </h2>
