@@ -47,7 +47,7 @@ export default function TextForm(props) {
             </div>
             <div className="container" style={{color: props.mode==='light'?'black':'white'}}>
                 <h2>Number of words: </h2>
-                {text.split(' ').length}
+                {text.split(' ').filter((element)=>{return element.length!==0}).length}
                 <h2>Number of characters: </h2>
                 {text.length}
             </div>

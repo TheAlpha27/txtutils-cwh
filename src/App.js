@@ -39,16 +39,20 @@ function App() {
   return (
     <>
       {/* <Router> */}
-        <Navbar title="TextUtils" toggleMode={toggleMode} mode={mode} />
-        <Alert alert={alert} />
-          {/* <Switch> */}
-            {/* <Route exact path='/'> */}
-              <TextForm mode={mode} showAlert={showAlert} />
-            {/* </Route> */}
-            {/* <Route exact path='/about'> */}
-              {/* <About /> */}
-            {/* </Route> */}
-          {/* </Switch> */}
+      <Navbar title="TextUtils" toggleMode={toggleMode} mode={mode} />
+      <div style={{height: `7vh`}}>
+      <Alert alert={alert} />
+      </div>
+      {/* <Switch> */}
+      {/* <Route exact path='/'> */}
+      <div className="container">
+        <TextForm mode={mode} showAlert={showAlert} />
+      </div>
+      {/* </Route> */}
+      {/* <Route exact path='/about'> */}
+      {/* <About /> */}
+      {/* </Route> */}
+      {/* </Switch> */}
       {/* </Router> */}
     </>
   );
