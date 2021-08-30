@@ -1,10 +1,10 @@
 import './App.css';
-import About from './Components/About';
+// import About from './Components/About';
 import Navbar from './Components/Navbar.js';
 import TextForm from './Components/TextForm';
 import { useState } from 'react'
 import Alert from './Components/Alert';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
+// import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
 
 
 
@@ -37,20 +37,20 @@ function App() {
     }, 2000);
   }
   return (
-      <Router>
+    <>
+      {/* <Router> */}
         <Navbar title="TextUtils" toggleMode={toggleMode} mode={mode} />
         <Alert alert={alert} />
-        <div className="container my-3">
-          <Switch>
-            <Route exact path='/'>
+          {/* <Switch> */}
+            {/* <Route exact path='/'> */}
               <TextForm mode={mode} showAlert={showAlert} />
-            </Route>
-            <Route exact path='/about'>
-              <About/>
-            </Route>
-          </Switch>
-        </div>
-      </Router>
+            {/* </Route> */}
+            {/* <Route exact path='/about'> */}
+              {/* <About /> */}
+            {/* </Route> */}
+          {/* </Switch> */}
+      {/* </Router> */}
+    </>
   );
 }
 export default App;
