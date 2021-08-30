@@ -15,11 +15,13 @@ function App() {
       setMode('dark');
       document.body.style.backgroundColor=`#01203f`;
       showAlert('success', 'Dark mode enabled');
+      document.title = 'TextUtils- Dark';
     }
     else {
       setMode('light');
       document.body.style.backgroundColor=`#d1d2d3`;
       showAlert('success', 'Dark mode disabled');
+      document.title = 'TextUtils- Light';
     }
   }
 
