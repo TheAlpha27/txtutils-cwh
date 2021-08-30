@@ -1,9 +1,11 @@
 import './App.css';
-// import About from './Components/About';
+import About from './Components/About';
 import Navbar from './Components/Navbar.js';
 import TextForm from './Components/TextForm';
 import { useState } from 'react'
 import Alert from './Components/Alert';
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
+
 
 
 function App() {
@@ -13,35 +15,42 @@ function App() {
   const toggleMode = () => {
     if (mode === 'light') {
       setMode('dark');
-      document.body.style.backgroundColor=`#01203f`;
+      document.body.style.backgroundColor = `#01203f`;
       showAlert('success', 'Dark mode enabled');
       document.title = 'TextUtils- Dark';
     }
     else {
       setMode('light');
-      document.body.style.backgroundColor=`#d1d2d3`;
+      document.body.style.backgroundColor = `#d1d2d3`;
       showAlert('success', 'Dark mode disabled');
       document.title = 'TextUtils- Light';
     }
   }
 
-  const showAlert = (type, message)=>{
+  const showAlert = (type, message) => {
     setAlert({
       type: type,
       msg: message
     });
-    setTimeout(()=>{
+    setTimeout(() => {
       setAlert(null);
     }, 2000);
   }
   return (
-    <>
-      {/* <Navbar title="TextUtils" aboutText="About Us" /> */}
-      <Navbar title="TextUtils" toggleMode = {toggleMode} mode={mode}/>
-      <Alert alert={alert}/>
-      <TextForm mode={mode} showAlert={showAlert}/>
-      {/* <About/> */}
-    </>
+      <Router>
+        <Navbar title="TextUtils" toggleMode={toggleMode} mode={mode} />
+        <Alert alert={alert} />
+        <div className="container my-3">
+          <Switch>
+            <Route exact path='/'>
+              <TextForm mode={mode} showAlert={showAlert} />
+            </Route>
+            <Route exact path='/about'>
+              <About/>
+            </Route>
+          </Switch>
+        </div>
+      </Router>
   );
 }
 export default App;
