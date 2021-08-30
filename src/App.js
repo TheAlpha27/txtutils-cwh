@@ -5,7 +5,7 @@ import TextForm from './Components/TextForm';
 import { useState } from 'react'
 import Alert from './Components/Alert';
 // import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
-
+// router do not work with github pages
 
 
 function App() {
