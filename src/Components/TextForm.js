@@ -18,9 +18,7 @@ export default function TextForm(props) {
         props.showAlert('success', 'Converted to LowerCase.');
     }
     const handleCopy = () => {
-        let text = document.getElementById("area");
-        text.select();
-        navigator.clipboard.writeText(text.value);
+        navigator.clipboard.writeText(text);
         props.showAlert('success', 'Text copied to clipboard.');
     }
     const handleExtraSpaces = () =>{
@@ -47,7 +45,7 @@ export default function TextForm(props) {
             </div>
             <div className="container" style={{color: props.mode==='light'?'black':'white'}}>
                 <h2>Number of words: </h2>
-                {text.split(' ').filter((element)=>{return element.length!==0}).length}
+                {text.split(/\s+/).filter((element)=>{return element.length!==0}).length}
                 <h2>Number of characters: </h2>
                 {text.length}
             </div>
